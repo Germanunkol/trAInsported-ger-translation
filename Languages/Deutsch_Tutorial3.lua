@@ -40,8 +40,8 @@ end
 
 local CODE_chooseDirectionFunction2 = parseCode([[
 function ai.chooseDirection( train, directions )
-	-- Beispiel: gib den Namen des trAIns aus
-	-- und den Namen des Passagieres:
+	-- Beispiel: Gib den Namen des trAIns aus
+	-- und den Namen des Passagiers:
 	-- (passenger ist 'nil' falls kein Passagier da ist)
 	if train.passenger == nil then
 		print(train.name.." hat keinen Passagier.")
@@ -87,7 +87,7 @@ end
 ]])
 
 local CODE_dropOffPassenger = parseCode([[
--- Code zum raus lassen der Passagiere:
+-- Code zum Rauslassen der Passagiere:
 function ai.foundDestination(train)
 	-- lass den Passagier raus:
 	dropPassenger(train)
@@ -95,7 +95,7 @@ end
 ]])
 
 local CODE_enoughMoney = parseCode([[
--- diese Funktion wird aufgerufen, sobald du genug geld hast:
+-- diese Funktion wird aufgerufen, sobald du genug Geld hast:
 function ai.enoughMoney()
 	buyTrain(1,3)
 end
@@ -103,12 +103,12 @@ end
 
 
 local CODE_moreIdeas = parseCode([[
--- Schau ob es der erste trAIn ist:
+-- Schau, ob es der erste trAIn ist:
 if train.ID == 1 then
 	...
 	
 -- Iteriere durch die Passagiere:
--- ACHTING: #passengers ist die Länge der Liste!!
+-- ACHTUNG: #passengers ist die Länge der Liste!!
 i = 1
 while i <= #passengers do
 	...
@@ -264,7 +264,7 @@ function tutorial.createTutBoxes()
 	tutorialSteps[k].stepTitle = "Check!"
 	tutorialSteps[k].message = 
 		"Das dritte Tutorial zeigt Dir:\n\n"..
-		"1) Wie man klügere Entscheidungen trifft, je nach dem wo deine Passagiere hin wollen\n\n"..
+		"1) Wie man klügere Entscheidungen trifft, je nachdem wo deine Passagiere hin wollen\n\n"..
 		"2) Den Umgang mit mehreren Zügen."
 	tutorialSteps[k].buttons = {}
 	tutorialSteps[k].buttons[1] = {name = "Starte Tutorial", event = nextTutorialStep}
@@ -273,9 +273,9 @@ function tutorial.createTutBoxes()
 	tutorialSteps[k] = {}
 	tutorialSteps[k].message = 
 		"Auf dieser Karte sind einige Kinder. "..
-		"Wie Schüler halt sind, wollen einige in die Schule, andere lieber nicht.\n"..
-		"Als trAIn Programmierer, ist es nicht unser Job dies zu verurteilen, obwohl...\n"..
-		"(Halte die Leertaste oder klicke auf einen Passagier um sein Ziel zu sehen)"
+		"Wie Schüler eben sind, wollen einige in die Schule, andere lieber nicht.\n"..
+		"Als trAIn-Programmierer steht es uns nicht zu, dies zu verurteilen, obwohl...\n"..
+		"(Halte die Leertaste oder klicke auf einen Passagier, um sein Ziel zu sehen)"
 	tutorialSteps[k].event =  startCreatingPassengers(k)
 	tutorialSteps[k].buttons = {}
 	tutorialSteps[k].buttons[1] = {name = "Zurück", event = prevTutorialStep}
@@ -287,7 +287,7 @@ function tutorial.createTutBoxes()
 		"Dein Job ist es die Passagiere an Ihr Ziel zu bringen.\n"..
 		"Wir könnten einfach alle Richtungen ausprobieren, bis wir die des Passagieres finden, "..
 		"aber dann wären wir kein guter Gegner für andere, klügere AIs.\n"..
-		"Stattdessen versuchen wir herauszufinden wo unser Passagier hin will und fahren dann entsprechend dorthin."
+		"Stattdessen versuchen wir herauszufinden, wo unser Passagier hin will und fahren dann entsprechend dorthin."
 	tutorialSteps[k].buttons = {}
 	tutorialSteps[k].buttons[1] = {name = "Zurück", event = prevTutorialStep}
 	tutorialSteps[k].buttons[2] = {name = "Weiter", event = nextTutorialStep}
@@ -295,8 +295,8 @@ function tutorial.createTutBoxes()
 	
 	tutorialSteps[k] = {}
 	tutorialSteps[k].message = 
-	  "Um dies zu erreichen fügen wir der Funktion ai.chooseDirection zwei Parameter hinzu, "..
-	  "namens 'train' und 'directions'.\n Öffne Deutsch_TutorialAI3.lua und kopiere den Code ausm Code-Kasten"
+	  "Um dies zu erreichen, fügen wir der Funktion ai.chooseDirection zwei Parameter hinzu, "..
+	  "namens 'train' und 'directions'.\n Öffne Deutsch_TutorialAI3.lua und kopiere den Code aus dem Code-Kasten"
 	tutorialSteps[k].event =  function()
 			cBox = codeBox.new(CODE_BOX_X, CODE_BOX_Y, CODE_chooseDirectionFunction1)
 		end
@@ -310,10 +310,10 @@ function tutorial.createTutBoxes()
 		"Der Parameter 'train' ist eine Tabelle, die den trAIn repräsentiert "..
 		"Sie hat folgende Elemente: 'ID', 'name', 'x' und 'y'. "..
 		"Wenn der trAIn geraden einen Passagier befördert, "..
-		"ist ein weitere Element namens 'passenger' in der Tabelle. "..
+		"ist ein weiteres Element namens 'passenger' in der Tabelle. "..
 		"(eine Tabelle die den Passager repräsentiert) Diese Tabelle wiederum "..
 		"hat die Elemente: 'destX' und 'destY', welche das Ziel des Passagieres angeben "..
-		"und 'name' - der Name unsere Passagieres. Füge den neuen Code deiner Funktion hinzu."
+		"und 'name' - der Name unsere Passagiers. Füge den neuen Code deiner Funktion hinzu."
 	tutorialSteps[k].event =  function()
 			cBox = codeBox.new(CODE_BOX_X, CODE_BOX_Y, CODE_chooseDirectionFunction2)
 		end
@@ -324,7 +324,7 @@ function tutorial.createTutBoxes()
 	
 	tutorialSteps[k] = {}
 	tutorialSteps[k].message = 
-		"Wie in Tutorial1, müssen wir Code hinzufügen, um einen Passagier mitzunehmen. "..
+		"Wie in Tutorial 1, müssen wir Code hinzufügen, um einen Passagier mitzunehmen. "..
 		"Füge dies deinem Script hinzu...\n\nWenn du fertig bist, lade neu und schau ob es funktioniert!"
 	tutorialSteps[k].event =  function()
 			cBox = codeBox.new(CODE_BOX_X, CODE_BOX_Y, CODE_pickUpPassenger)
@@ -351,7 +351,7 @@ function tutorial.createTutBoxes()
 		"Wenn ein Passagier an Bord ist, vergleichen wir die aktuellen X-Koordinaten "..
 		"des Zuges (train.x) mit den Zielkoordinaten des Passagieres "..
 		"(train.passenger.destX). Liegt das Ziel im Westen "..
-		"(X des Ziels ist kleiner als X des trAIn's), dann fahren wir nach Westen. "..
+		"(X des Ziels ist kleiner als X des trAIns), dann fahren wir nach Westen. "..
 		"Ansonsten fahren wir nach Osten\nErweitere deine Funktion um diese neuen Teile "
 	tutorialSteps[k].event =  function()
 			cBox = codeBox.new(CODE_BOX_X, CODE_BOX_Y, CODE_chooseDirectionWithPassenger2)
@@ -363,9 +363,9 @@ function tutorial.createTutBoxes()
 	
 	tutorialSteps[k] = {}
 	tutorialSteps[k].message = 
-		"Als letztes müssen wir den Passagier raus lassen, so wie letztes mal\n\n"..
-		"Wenn du dass alles programmiert hast, lade neu und beobachte wie der trAIn die Passagiere raus lässt!\n"..
-		"(Do kannst die Geschwindigkeit des Tutorials ändern wenn du auf + oder - klickst"
+		"Als letztes müssen wir den Passagier rauslassen, so wie letztes Mal\n\n"..
+		"Wenn du das alles programmiert hast, lade neu und beobachte wie der trAIn die Passagiere rauslässt!\n"..
+		"(Du kannst die Geschwindigkeit des Tutorials ändern indem du auf + oder - klickst"
 	tutorialSteps[k].event = waitingForPassengersEvent(k)
 	tutorialSteps[k].buttons = {}
 	tutorialSteps[k].buttons[1] = {name = "Zurück", event = prevTutorialStep}
@@ -376,9 +376,9 @@ function tutorial.createTutBoxes()
 	tutorialSteps[k].message = 
 		"Du scheinst es richtig gemacht zu haben, super! Aber es würde viel viel schneller gehen, "..
 		"wenn wir mehr als einen trAIn hätten. Du beginnst das Tutorial mit einem trAIn und 15 Credits. "..
-		"Ein neuer trAIn kostet" .. TRAIN_COST .. " credits. Immer wenn du einen Passagier raus lässt, "..
+		"Ein neuer trAIn kostet" .. TRAIN_COST .. " credits. Immer wenn du einen Passagier rauslässt, "..
 		"verdienst du Geld (Credits). Sobald du genug Geld für einen neuen trAIn hast, "..
-		" wird die Funktion 'ai.enoughMoney aufgerufen. Benutze sie um einen neuen trAIn zu kaufen.\n"..
+		" wird die Funktion 'ai.enoughMoney aufgerufen. Benutze sie, um einen neuen trAIn zu kaufen.\n"..
 		"Sobald du den Code geschrieben hast, lade neu."
 	tutorialSteps[k].event = enoughMoneyEvent(k)
 	tutorialSteps[k].buttons = {}
@@ -387,8 +387,8 @@ function tutorial.createTutBoxes()
 	
 	tutorialSteps[k] = {}
 	tutorialSteps[k].message = 
-		"Du bestitzt jetzt zwei trAIns\nLehne dich zurück, entspanne und beobachte deine trAIns, "..
-		"wie sie 10 Passagiere zu ihrem Ziel bringen, Guter Job!\n\n"..
+		"Du besitzt jetzt zwei trAIns\nLehne dich zurück, entspanne und beobachte deine trAIns, "..
+		"wie sie 10 Passagiere zu ihrem Ziel bringen. Gute Arbeit!\n\n"..
 		"0 von 10 transportiert."
 	tutorialSteps[k].event = waitFor10Passengers(k)
 	tutorialSteps[k].buttons = {}
@@ -404,12 +404,12 @@ function tutorial.createTutBoxes()
 	tutorialSteps[k].buttons = {}
 	tutorialSteps[k].buttons[1] = {name = "Zurück", event = prevTutorialStep}
 	tutorialSteps[k].buttons[2] = {name = "Mehr Ideen", event = additionalInformation(
-		"Versuche dass der erste trAIn nur Passagiere, die nach Osten wollen transportiert. "..
+		"Versuche, dass der erste trAIn nur Passagiere, die nach Osten wollen, transportiert. "..
 		"Um dies zu erreichen:\nChecke in ai.foundPassengers ob die train.ID 1 ist. "..
-		"Dann, prüfe ob passengers[1]'s destX kleiner als train.x ist.\n"..
+		"Dann prüfe ob passengers[1]'s destX kleiner als train.x ist.\n"..
 		"Wenn ja, dann nimm ihn mit, andernfalls gehe zu passengers[2] und so weiter,\n"..
-		"Falls möglich, benutze eine while Schleife für die passenger Liste. "..
-		"Zuletzt, sorge dafür, dass der zweite trAIn nur Passagiere die nach Westen wollen mitnimmt. "..
+		"Falls möglich, benutze eine while-Schleife für die passenger-Liste. "..
+		"Zuletzt, sorge dafür, dass der zweite trAIn nur Passagiere, die nach Westen wollen, mitnimmt. "..
 		"ACHTUNG: #passengers ist die Größe der Liste! Denk daran 'break' "..
 		"lässt dich die Schleife beenden sobald du deinen Passagier gefunden hast.", CODE_moreIdeas), inBetweenSteps = true}
 	tutorialSteps[k].buttons[3] = {name = "Weiter", event = nextTutorialStep}
@@ -483,8 +483,8 @@ function waitFor10Passengers(k)
 			numPassengers = numPassengers + 1
 			if currentStep == k then
 				currentTutBox.text = 
-					"Du bestitzt jetzt zwei trAIns\nLehne dich zurück, entspanne und beobachte deine trAIns, "..
-					"wie sie 10 Passagiere zu ihrem Ziel bringen, Guter Job!\n\n".. numPassengers .." von 10 transportiert."
+					"Du besitzt jetzt zwei trAIns\nLehne dich zurück, entspanne und beobachte deine trAIns, "..
+					"wie sie 10 Passagiere zu ihrem Ziel bringen. Gute Arbeit!\n\n".. numPassengers .." von 10 transportiert."
 				if numPassengers >= 10 then
 					nextTutorialStep()
 					tutorialBox.succeed()
@@ -546,8 +546,8 @@ function tutorial.handleEvents(dt)
 end
 
 kidSpeaches = {}
-kidSpeaches[1] = "Ich werde die Mathe Prüfung verhauen..."
-kidSpeaches[2] = "Habe heute Informatik. Hörte dass wir heute was namens 'Lua' beginnen. Egal!."
+kidSpeaches[1] = "Ich werde die Mathe-Prüfung verhauen..."
+kidSpeaches[2] = "Habe heute Informatik. Hörte, dass wir heute was namens 'Lua' beginnen. Egal!."
 kidSpeaches[3] = "Ich hab meine Hausix vergessen."
 kidSpeaches[4] = "Schwänzen oder nicht Schwänzen, das ist hier die Frage..."
 kidSpeaches[5] = "Das wird mein Untergang."
