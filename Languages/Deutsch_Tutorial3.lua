@@ -275,7 +275,7 @@ function tutorial.createTutBoxes()
 		"Auf dieser Karte sind einige Kinder. "..
 		"Wie Schüler eben sind, wollen einige in die Schule, andere lieber nicht.\n"..
 		"Als trAIn-Programmierer steht es uns nicht zu, dies zu verurteilen, obwohl...\n"..
-		"(Halte die Leertaste oder klicke auf einen Passagier, um sein Ziel zu sehen)"
+		"(Drücke die Leertaste oder klicke auf einen Passagier, um sein Ziel zu sehen)"
 	tutorialSteps[k].event =  startCreatingPassengers(k)
 	tutorialSteps[k].buttons = {}
 	tutorialSteps[k].buttons[1] = {name = "Zurück", event = prevTutorialStep}
@@ -284,7 +284,7 @@ function tutorial.createTutBoxes()
 	
 	tutorialSteps[k] = {}
 	tutorialSteps[k].message = 
-		"Dein Job ist es die Passagiere an Ihr Ziel zu bringen.\n"..
+		"Dein Job ist es die Passagiere an ihr Ziel zu bringen.\n"..
 		"Wir könnten einfach alle Richtungen ausprobieren, bis wir die des Passagieres finden, "..
 		"aber dann wären wir kein guter Gegner für andere, klügere AIs.\n"..
 		"Stattdessen versuchen wir herauszufinden, wo unser Passagier hin will und fahren dann entsprechend dorthin."
@@ -296,7 +296,7 @@ function tutorial.createTutBoxes()
 	tutorialSteps[k] = {}
 	tutorialSteps[k].message = 
 	  "Um dies zu erreichen, fügen wir der Funktion ai.chooseDirection zwei Parameter hinzu, "..
-	  "namens 'train' und 'directions'.\n Öffne Deutsch_TutorialAI3.lua und kopiere den Code aus dem Code-Kasten"
+	  "namens 'train' und 'directions'.\n Öffne Deutsch_TutorialAI3.lua und kopiere den Code aus dem Code-Kasten."
 	tutorialSteps[k].event =  function()
 			cBox = codeBox.new(CODE_BOX_X, CODE_BOX_Y, CODE_chooseDirectionFunction1)
 		end
@@ -309,11 +309,11 @@ function tutorial.createTutBoxes()
 	tutorialSteps[k].message = 
 		"Der Parameter 'train' ist eine Tabelle, die den trAIn repräsentiert "..
 		"Sie hat folgende Elemente: 'ID', 'name', 'x' und 'y'. "..
-		"Wenn der trAIn geraden einen Passagier befördert, "..
-		"ist ein weiteres Element namens 'passenger' in der Tabelle. "..
-		"(eine Tabelle die den Passager repräsentiert) Diese Tabelle wiederum "..
+		"Wenn der trAIn gerade einen Passagier befördert, "..
+		"ist ein weiteres Element namens 'passenger' in der Tabelle "..
+		"(eine Tabelle die den Passager repräsentiert). Diese Tabelle wiederum "..
 		"hat die Elemente: 'destX' und 'destY', welche das Ziel des Passagieres angeben "..
-		"und 'name' - der Name unsere Passagiers. Füge den neuen Code deiner Funktion hinzu."
+		"und 'name' - der Name unseres Passagiers. Füge den neuen Code deiner Funktion hinzu."
 	tutorialSteps[k].event =  function()
 			cBox = codeBox.new(CODE_BOX_X, CODE_BOX_Y, CODE_chooseDirectionFunction2)
 		end
@@ -352,7 +352,7 @@ function tutorial.createTutBoxes()
 		"des Zuges (train.x) mit den Zielkoordinaten des Passagieres "..
 		"(train.passenger.destX). Liegt das Ziel im Westen "..
 		"(X des Ziels ist kleiner als X des trAIns), dann fahren wir nach Westen. "..
-		"Ansonsten fahren wir nach Osten\nErweitere deine Funktion um diese neuen Teile "
+		"Ansonsten fahren wir nach Osten.\nErweitere deine Funktion entsprechend."
 	tutorialSteps[k].event =  function()
 			cBox = codeBox.new(CODE_BOX_X, CODE_BOX_Y, CODE_chooseDirectionWithPassenger2)
 		end
@@ -363,7 +363,7 @@ function tutorial.createTutBoxes()
 	
 	tutorialSteps[k] = {}
 	tutorialSteps[k].message = 
-		"Als letztes müssen wir den Passagier rauslassen, so wie letztes Mal\n\n"..
+		"Als Letztes müssen wir den Passagier absetzen, so wie letztes Mal\n\n"..
 		"Wenn du das alles programmiert hast, lade neu und beobachte wie der trAIn die Passagiere rauslässt!\n"..
 		"(Du kannst die Geschwindigkeit des Tutorials ändern indem du auf + oder - klickst"
 	tutorialSteps[k].event = waitingForPassengersEvent(k)
@@ -378,7 +378,7 @@ function tutorial.createTutBoxes()
 		"wenn wir mehr als einen trAIn hätten. Du beginnst das Tutorial mit einem trAIn und 15 Credits. "..
 		"Ein neuer trAIn kostet" .. TRAIN_COST .. " credits. Immer wenn du einen Passagier rauslässt, "..
 		"verdienst du Geld (Credits). Sobald du genug Geld für einen neuen trAIn hast, "..
-		" wird die Funktion 'ai.enoughMoney aufgerufen. Benutze sie, um einen neuen trAIn zu kaufen.\n"..
+		"wird die Funktion 'ai.enoughMoney aufgerufen. Benutze sie, um einen neuen trAIn zu kaufen.\n"..
 		"Sobald du den Code geschrieben hast, lade neu."
 	tutorialSteps[k].event = enoughMoneyEvent(k)
 	tutorialSteps[k].buttons = {}
@@ -387,7 +387,7 @@ function tutorial.createTutBoxes()
 	
 	tutorialSteps[k] = {}
 	tutorialSteps[k].message = 
-		"Du besitzt jetzt zwei trAIns\nLehne dich zurück, entspanne und beobachte deine trAIns, "..
+		"Du besitzt jetzt zwei trAIns.\nLehne dich zurück und beobachte deine trAIns dabei, "..
 		"wie sie 10 Passagiere zu ihrem Ziel bringen. Gute Arbeit!\n\n"..
 		"0 von 10 transportiert."
 	tutorialSteps[k].event = waitFor10Passengers(k)
@@ -409,8 +409,8 @@ function tutorial.createTutBoxes()
 		"Dann prüfe ob passengers[1]'s destX kleiner als train.x ist.\n"..
 		"Wenn ja, dann nimm ihn mit, andernfalls gehe zu passengers[2] und so weiter,\n"..
 		"Falls möglich, benutze eine while-Schleife für die passenger-Liste. "..
-		"Zuletzt, sorge dafür, dass der zweite trAIn nur Passagiere, die nach Westen wollen, mitnimmt. "..
-		"ACHTUNG: #passengers ist die Größe der Liste! Denk daran 'break' "..
+		"Sorge zuletzt dafür, dass der zweite trAIn nur Passagiere, die nach Westen wollen, mitnimmt. "..
+		"ACHTUNG: #passengers ist die Größe der Liste! Denk daran: 'break' "..
 		"lässt dich die Schleife beenden sobald du deinen Passagier gefunden hast.", CODE_moreIdeas), inBetweenSteps = true}
 	tutorialSteps[k].buttons[3] = {name = "Weiter", event = nextTutorialStep}
 	k = k + 1
@@ -548,11 +548,11 @@ end
 kidSpeaches = {}
 kidSpeaches[1] = "Ich werde die Mathe-Prüfung verhauen..."
 kidSpeaches[2] = "Habe heute Informatik. Hörte, dass wir heute was namens 'Lua' beginnen. Egal!."
-kidSpeaches[3] = "Ich hab meine Hausix vergessen."
+kidSpeaches[3] = "Ich hab meine Hausis vergessen."
 kidSpeaches[4] = "Schwänzen oder nicht Schwänzen, das ist hier die Frage..."
 kidSpeaches[5] = "Das wird mein Untergang."
 kidSpeaches[6] = "Letzter Schultag!"
-kidSpeaches[7] = "Siehst du diesen Sonnenschein? Er sagt 'Neeeein... geh nicht zur Schule!'"
+kidSpeaches[7] = "Siehst du diesen Sonnenschein? Er sagt: 'Neeeein... geh nicht zur Schule!'"
 
 fileContent = [[
 -- Tutorial 3: Sei smart!
